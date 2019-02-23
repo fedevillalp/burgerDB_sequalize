@@ -1,0 +1,56 @@
+<br>
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <div class="jumbotron">
+        <h1 class="display-4">Menu</h1>
+        <hr class="my-4">
+          <ul>
+            {{#each burgers}}
+              {{#unless this.consumed}}
+              <li>
+                <p>
+                   {{this.burger_name}}{{!-- {{this.id}} , {{this.consumed}} --}}
+                  <button class="btn btn-outline-primary" data-id="{{this.id}}">
+                    Eat
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm" data-id="{{this.id}}">
+                      Delete
+                  </button>
+                </p>
+              </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="jumbotron">
+        <h1 class="display-4">Eaten</h1>
+        <hr class="my-4">
+          <ul>
+            {{#each burgers}}
+              
+                  {{#if this.consumed}}
+                    <li>
+                      <p>
+                     {{this.burger_name}} {{!--, {{this.id}} State: {{this.consumed}} --}}
+                      <button class="btn btn-outline-danger btn-sm" data-id="{{this.id}}">
+                      Delete
+                      </button>
+                      </p>
+                    </li>
+                  {{/if}}
+                
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
